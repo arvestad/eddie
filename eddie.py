@@ -38,7 +38,7 @@ def bot_msg(msg):
 def bot_perms(user):
     """Check if user has 'bots' role"""
     roles = [r.name for r in user.roles]
-    if "bots" in roles:
+    if "TA" in roles:
         return True
     else:
         return False
@@ -50,8 +50,8 @@ async def ping(ctx, help="check if bot is up by ping"):
     await ctx.send("pong")
 
 @bot.command()
-@commands.has_role("bots")
-async def toggle(ctx, channel="queue", help="toggle queue channel"):
+@commands.has_role("TA")
+async def toggle(ctx, channel="kö", help="toggle queue channel"):
     """Lock/Unlock write-permissions for regular members"""
     server = ctx.guild
     
